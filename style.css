@@ -1,0 +1,1286 @@
+/* =========================================================
+   GLOBAL SETTINGS
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f4f1;
+    color: #292323;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+   ========================================================= */
+
+.section-small {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #9a777d;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 70px;
+}
+
+.section-heading h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 78px);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.section-heading p {
+    color: #776b6b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+   ========================================================= */
+
+.continue-button {
+    border: none;
+    background: #2d2527;
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 55px;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.continue-button:hover {
+    transform: translateY(-4px);
+    background: #8f6870;
+    box-shadow: 0 12px 30px rgba(45, 37, 39, 0.15);
+}
+
+
+/* =========================================================
+   PAGE 1 — FAKE CLOTHING WEBSITE
+   ========================================================= */
+
+.clothing-page {
+    background: #f1eee9;
+    color: #171515;
+    display: flex;
+    flex-direction: column;
+}
+
+.fashion-nav {
+    width: 100%;
+    padding: 28px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d7d2cc;
+}
+
+.fashion-logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.fashion-links {
+    display: flex;
+    gap: 32px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.fashion-icons {
+    font-size: 18px;
+}
+
+.fashion-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.fashion-small {
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    color: #77706b;
+}
+
+.fashion-hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(55px, 10vw, 125px);
+    line-height: 0.85;
+    font-weight: normal;
+    letter-spacing: -6px;
+    margin-bottom: 35px;
+}
+
+.fashion-hero p {
+    color: #69635f;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.fashion-button {
+    background: #171515;
+    color: white;
+    border: none;
+    padding: 18px 38px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+.fashion-button:hover {
+    background: #7f6c68;
+    transform: translateY(-3px);
+}
+
+.fashion-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 6%;
+    border-top: 1px solid #d7d2cc;
+    color: #817b76;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PAGE 2 — PLOT TWIST
+   ========================================================= */
+
+.reveal-page {
+    display: none;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(231, 191, 199, 0.4),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(239, 214, 211, 0.5),
+            transparent 35%
+        ),
+        #fff8f8;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.reveal-content {
+    max-width: 850px;
+    padding: 40px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.tiny-text {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #a17a82;
+    margin-bottom: 25px;
+}
+
+.reveal-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 0.98;
+    font-weight: normal;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.reveal-content p {
+    color: #776b6b;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.reveal-highlight {
+    color: #a15e6b !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px !important;
+    margin: 8px 0;
+}
+
+.floating-heart {
+    position: absolute;
+    color: #c98694;
+    font-family: Georgia, serif;
+    font-size: 45px;
+    opacity: 0.45;
+    animation: floatHeart 5s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 15%;
+    left: 12%;
+}
+
+.heart-two {
+    top: 70%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+.heart-three {
+    top: 25%;
+    right: 12%;
+    animation-delay: 3s;
+}
+
+
+/* =========================================================
+   PAGE 3 — INTRO
+   ========================================================= */
+
+.intro-page {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #f9f2ef;
+}
+
+.intro-content {
+    max-width: 850px;
+    padding: 50px 30px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.intro-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #a17a82;
+    margin-bottom: 30px;
+}
+
+.intro-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    margin-bottom: 35px;
+}
+
+.intro-content p {
+    max-width: 600px;
+    margin: 12px auto;
+    color: #766b6b;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   PAGE 4 — REASONS
+   ========================================================= */
+
+.reasons-page {
+    display: none;
+    padding: 110px 7%;
+    text-align: center;
+    background: #fffaf8;
+}
+
+.reasons-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    text-align: left;
+}
+
+.reason-card {
+    background: #f8f1ee;
+    padding: 38px;
+    min-height: 230px;
+    border: 1px solid #eaded9;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.reason-card::after {
+    content: "♡";
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+    font-family: Georgia, serif;
+    font-size: 70px;
+    color: rgba(182, 123, 134, 0.09);
+}
+
+.reason-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(83, 61, 65, 0.08);
+}
+
+.reason-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a17a82;
+}
+
+.reason-card h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 22px 0 14px;
+}
+
+.reason-card p {
+    color: #776c6c;
+    line-height: 1.7;
+    max-width: 450px;
+}
+
+.funny-reason {
+    background: #f4e9e5;
+}
+
+.final-reason {
+    background: #ead8d5;
+}
+
+
+/* =========================================================
+   PAGE 5 — HIS PHOTOS
+   ========================================================= */
+
+.his-photos-page {
+    display: none;
+    padding: 110px 7%;
+    text-align: center;
+    background: #f7f0ed;
+}
+
+.photo-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px 12px 40px;
+    box-shadow: 0 15px 35px rgba(60, 42, 45, 0.12);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-12px) rotate(0deg) !important;
+    box-shadow: 0 25px 45px rgba(60, 42, 45, 0.18);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-one {
+    transform: rotate(-3deg);
+}
+
+.photo-two {
+    transform: translateY(30px) rotate(2deg);
+}
+
+.photo-three {
+    transform: rotate(-2deg);
+}
+
+.photo-caption {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    margin-top: 75px;
+    color: #6f565b;
+}
+
+
+/* =========================================================
+   PAGE 6 — MEMORIES
+   ========================================================= */
+
+.memories-page {
+    display: none;
+    padding: 110px 7%;
+    text-align: center;
+    background: #fffaf8;
+}
+
+.memory-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.memory-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 430px;
+    background: #ddd;
+    box-shadow: 0 15px 35px rgba(60, 42, 45, 0.12);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.06);
+}
+
+.memory-large {
+    min-height: 600px;
+}
+
+.memory-large img {
+    min-height: 600px;
+}
+
+.memory-wide {
+    grid-column: span 2;
+}
+
+.memory-wide img {
+    min-height: 400px;
+}
+
+.memory-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 50px 30px 28px;
+    text-align: left;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.7)
+    );
+}
+
+.memory-text span {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.memory-text h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: normal;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   PAGE 7 — REASSURANCE
+   ========================================================= */
+
+.reassurance-page {
+    display: none;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            #f1dfe0,
+            #faf3f1 55%,
+            #f7ece9
+        );
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.reassurance-content {
+    max-width: 800px;
+    padding: 40px 25px;
+}
+
+.reassurance-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 55px;
+}
+
+.reassurance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.reassurance-list p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    color: #705a5e;
+}
+
+.reassurance-list .special-line {
+    color: #a15e6b;
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   PAGE 8 — FINAL
+   ========================================================= */
+
+.final-page {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #5b444a,
+            #251e20 70%
+        );
+    color: #fff8f5;
+    overflow: hidden;
+}
+
+.final-content {
+    max-width: 850px;
+    padding: 50px 25px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.final-page .section-small {
+    color: #d9adb5;
+}
+
+.final-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: normal;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin-bottom: 35px;
+}
+
+.final-content > p {
+    max-width: 600px;
+    margin: 12px auto;
+    color: #d6c5c5;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.final-message {
+    margin-top: 55px;
+}
+
+.final-message p {
+    color: #d7bfc1;
+    font-size: 18px;
+}
+
+.final-message h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 35px;
+    font-weight: normal;
+    margin: 10px 0 20px;
+}
+
+.final-heart {
+    font-family: Georgia, serif;
+    font-size: 70px;
+    color: #e6aeb8;
+    margin: 25px 0;
+    animation: heartbeat 2s infinite;
+}
+
+.final-note {
+    font-size: 12px !important;
+    color: #a99498 !important;
+    margin-top: 40px !important;
+}
+
+.final-stars {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    letter-spacing: 25px;
+    color: #dcb6bd;
+    opacity: 0.6;
+    white-space: nowrap;
+    animation: twinkle 3s infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / PHONE VERSION
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .fashion-nav {
+        padding: 22px 5%;
+    }
+
+    .fashion-links {
+        display: none;
+    }
+
+    .fashion-icons {
+        font-size: 16px;
+    }
+
+    .fashion-logo {
+        font-size: 21px;
+    }
+
+    .fashion-hero {
+        padding: 60px 20px;
+    }
+
+    .fashion-hero h1 {
+        font-size: 58px;
+        letter-spacing: -4px;
+    }
+
+    .fashion-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+
+    .reveal-content {
+        padding: 25px;
+    }
+
+    .reveal-content h1 {
+        font-size: 45px;
+    }
+
+    .floating-heart {
+        font-size: 30px;
+    }
+
+
+    .intro-content {
+        padding: 35px 25px;
+    }
+
+    .intro-content h1 {
+        font-size: 48px;
+    }
+
+
+    .reasons-page,
+    .his-photos-page,
+    .memories-page {
+        padding: 80px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+    .section-heading h1 {
+        font-size: 48px;
+    }
+
+    .reasons-container {
+        grid-template-columns: 1fr;
+    }
+
+    .reason-card {
+        padding: 30px;
+    }
+
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        max-width: 400px;
+    }
+
+    .photo-card img {
+        height: 430px;
+    }
+
+    .photo-two {
+        transform: rotate(2deg);
+    }
+
+    .photo-caption {
+        margin-top: 55px;
+    }
+
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card,
+    .memory-large {
+        min-height: 450px;
+    }
+
+    .memory-card img,
+    .memory-large img,
+    .memory-wide img {
+        min-height: 450px;
+    }
+
+    .memory-wide {
+        grid-column: span 1;
+    }
+
+
+    .reassurance-content h1 {
+        font-size: 52px;
+    }
+
+    .reassurance-list p {
+        font-size: 20px;
+    }
+
+    .reassurance-list .special-line {
+        font-size: 26px;
+    }
+
+
+    .final-content {
+        padding: 35px 25px;
+    }
+
+    .final-content h1 {
+        font-size: 60px;
+    }
+
+    .final-message h2 {
+        font-size: 29px;
+    }
+
+    .final-stars {
+        font-size: 18px;
+        letter-spacing: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .fashion-hero h1 {
+        font-size: 48px;
+    }
+
+    .intro-content h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h1 {
+        font-size: 42px;
+    }
+
+    .final-content h1 {
+        font-size: 50px;
+    }
+
+}
+/* =========================================================
+   MOBILE OPTIMIZATION
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .page {
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow-x: hidden;
+    }
+
+    /* ---------- GENERAL ---------- */
+
+    button {
+        max-width: 90%;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .main-button,
+    .fashion-button {
+        min-height: 48px;
+        padding: 14px 24px;
+        font-size: 10px;
+    }
+
+
+    /* ---------- CLOTHING PAGE ---------- */
+
+    .fashion-nav {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .nav-text {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .fashion-hero {
+        padding: 35px 20px;
+    }
+
+    .fashion-title {
+        font-size: clamp(52px, 18vw, 75px);
+        letter-spacing: -3px;
+    }
+
+    .fashion-small {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .fashion-subtitle {
+        font-size: 11px;
+        line-height: 1.6;
+        padding: 0 15px;
+    }
+
+
+    /* ---------- REVEAL PAGE ---------- */
+
+    .reveal-page {
+        padding: 30px 22px;
+    }
+
+    .reveal-title {
+        font-size: clamp(42px, 13vw, 58px);
+        line-height: 0.95;
+    }
+
+    .reveal-text {
+        font-size: 13px;
+        line-height: 1.8;
+        padding: 0 8px;
+    }
+
+
+    /* ---------- INTRO PAGE ---------- */
+
+    .intro-page {
+        padding: 30px 22px;
+    }
+
+    .intro-title {
+        font-size: clamp(45px, 14vw, 62px);
+        line-height: 0.92;
+    }
+
+    .intro-text {
+        font-size: 13px;
+        line-height: 1.8;
+        padding: 0 8px;
+    }
+
+
+    /* ---------- SECTION HEADINGS ---------- */
+
+    .section-heading {
+        padding: 0 5px;
+        margin-bottom: 38px;
+    }
+
+    .section-title {
+        font-size: clamp(43px, 13vw, 58px);
+        line-height: 0.95;
+    }
+
+    .section-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+
+    /* ---------- REASONS ---------- */
+
+    .reasons-page {
+        padding: 60px 16px;
+    }
+
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+        width: 100%;
+    }
+
+    .reason-card {
+        width: 100%;
+        min-height: 120px;
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    .reason-card p {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .reason-card:active {
+        transform: scale(0.97);
+    }
+
+    .motorcycle {
+        font-size: 27px;
+    }
+
+
+    /* ---------- HIS PHOTOS ---------- */
+
+    .his-photos-page {
+        padding: 60px 16px;
+    }
+
+    .photo-grid {
+        width: 100%;
+        max-width: 350px;
+        margin: 35px auto 0;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .photo-card {
+        width: 100%;
+        padding: 9px 9px 22px;
+    }
+
+    .photo-card:nth-child(1),
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(3) {
+        margin-top: 0;
+        transform: none;
+    }
+
+    .photo-card:active {
+        transform: scale(0.98);
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: auto;
+        max-height: 470px;
+        object-fit: cover;
+    }
+
+    .photo-caption {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+
+    /* ---------- MEMORIES ---------- */
+
+    .memories-page {
+        padding: 60px 16px;
+    }
+
+    .memory-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 35px;
+    }
+
+    .memory-card,
+    .memory-card.large {
+        width: 100%;
+        min-height: 380px;
+        border-radius: 18px;
+    }
+
+    .memory-card img,
+    .memory-card.large img {
+        width: 100%;
+        min-height: 380px;
+        object-fit: cover;
+    }
+
+    .memory-caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+
+
+    /* ---------- REASSURANCE ---------- */
+
+    .reassurance-page {
+        padding: 35px 22px;
+    }
+
+    .reassurance-title {
+        font-size: clamp(45px, 14vw, 62px);
+        line-height: 0.92;
+    }
+
+    .reassurance-text {
+        font-size: 17px;
+        line-height: 1.8;
+        margin-top: 28px;
+    }
+
+
+    /* ---------- FINAL PAGE ---------- */
+
+    .final-page {
+        padding: 35px 22px;
+    }
+
+    .final-small {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .final-title {
+        font-size: clamp(50px, 15vw, 68px);
+        line-height: 0.9;
+    }
+
+    .final-message {
+        font-size: 19px;
+        line-height: 1.7;
+        margin-top: 28px;
+    }
+
+    .final-ps {
+        font-size: 10px;
+        line-height: 1.7;
+        margin-top: 35px;
+    }
+
+
+    /* ---------- MUSIC BUTTON ---------- */
+
+    #musicButton {
+        width: 44px;
+        height: 44px;
+        right: 14px;
+        bottom: 14px;
+    }
+
+
+    /* ---------- POPUP ---------- */
+
+    #secretPopup {
+        padding: 18px;
+    }
+
+    .secret-box {
+        width: 100%;
+        padding: 35px 22px;
+        border-radius: 22px;
+    }
+
+    .secret-box h3 {
+        font-size: 29px;
+    }
+
+    .secret-box p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .fashion-title {
+        font-size: 50px;
+    }
+
+    .reveal-title {
+        font-size: 40px;
+    }
+
+    .intro-title {
+        font-size: 43px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+
+    .reason-card {
+        min-height: 110px;
+    }
+
+    .reason-card p {
+        font-size: 18px;
+    }
+
+    .photo-grid {
+        max-width: 320px;
+    }
+
+    .memory-card,
+    .memory-card.large,
+    .memory-card img,
+    .memory-card.large img {
+        min-height: 340px;
+    }
+
+    .final-title {
+        font-size: 48px;
+    }
+}
