@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
    PASSWORD PAGE
    ========================================================= */
 
-const correctPassword = "iloveyou";
+const correctPassword = "lavasa";
 
 const passwordPage = document.getElementById("password-page");
 const passwordInput = document.getElementById("passwordInput");
